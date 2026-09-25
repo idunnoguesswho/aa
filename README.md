@@ -1,26 +1,30 @@
 # aa
 
-Static site served at **https://aa.ekat.ca** by Cloudflare Workers (static assets).
+Static site served at **https://aa.ekat.ca** by nginx on the ekat VPS (the same server as sidebar.ekat.ca).
 
 ## Layout
 
-- `public/` - everything in here is the website. `index.html` is the home page; `404.html` is shown for unknown paths.
-- `wrangler.jsonc` - Cloudflare config, including the `aa.ekat.ca` custom domain (Cloudflare manages its DNS record and certificate).
+- `public/` - the website. `index.html` is the home page; `404.html` is shown for unknown paths. Only this folder is served.
+- `deploy/aa.ekat.conf` - the nginx site config.
+- `.github/workflows/deploy.yml` - on every push to `main`, SSHes into the VPS and pulls the latest code.
 
 ## Preview locally
 
-```bash
-npx wrangler dev
-```
-
-Then open http://localhost:8787.
-
-## Deploy
-
-Manual:
+Open `public/index.html` in a browser, or:
 
 ```bash
-npx wrangler deploy
+npx serve public
 ```
 
-Automatic on every push to `main`: in the Cloudflare dashboard go to **Workers & Pages → aa → Settings → Build → Connect** and pick this GitHub repo (build command: none; deploy command: `npx wrangler deploy`). No secrets need to be stored in GitHub.
+## One-time server setup
+
+1. **DNS** (Cloudflare, `ekat.ca` zone): add an `A` record `aa` → the VPS IP, matching `sidebar`'s record (same proxy on/off setting).
+2. **On the VPS:**
+   ```bash
+   git clone https://github.com/idunnoguesswho/aa.git /var/www/aa
+   cp /var/www/aa/deploy/aa.ekat.conf /etc/nginx/sites-available/aa.ekat.conf
+   ln -s /etc/nginx/sites-available/aa.ekat.conf /etc/nginx/sites-enabled/
+   nginx -t && systemctl reload nginx
+   certbot --nginx -d aa.ekat.ca
+   ```
+3. **GitHub** (this repo → Settings → Secrets and variables → Actions): add `DEPLOY_HOST`, `DEPLOY_USER`, `DEPLOY_SSH_KEY`, `DEPLOY_PORT` - the deploy user needs write access to `/var/www/aa`.

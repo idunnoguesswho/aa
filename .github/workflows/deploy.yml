@@ -1,0 +1,31 @@
+name: Deploy
+
+# Static site: nothing to build, so just SSH into the VPS and fast-forward
+# the clone at /var/www/aa. nginx serves /var/www/aa/public directly, so a
+# pull is the whole deploy - no restart needed.
+# Needs repo secrets DEPLOY_HOST, DEPLOY_USER, DEPLOY_SSH_KEY, DEPLOY_PORT
+# (same meaning as in the sidebar repo; see README).
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Pull latest on VPS
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          port: ${{ secrets.DEPLOY_PORT }}
+          script: |
+            set -e
+            cd /var/www/aa
+            git fetch origin main
+            # Hard-match origin so a stray edit on the server can't block deploys.
+            git reset --hard origin/main
