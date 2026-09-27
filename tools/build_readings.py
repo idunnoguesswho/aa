@@ -17,7 +17,7 @@ for p in re.findall(r"<w:p[ >].*?</w:p>", x, re.S):
 VERSE = {"Serenity Prayer", "Prayer of Saint Francis of Assisi", "Gratitude",
          "The Lord’s Prayer", "How to Have a Good Day", "The Four Absolutes"}
 # Headings that continue the previous section rather than starting a new one.
-MERGE = {"The Twelve Traditions (cont)", "the “Big Book”"}
+MERGE = {"The Twelve Traditions (cont.)", "the “Big Book”"}
 
 def slug(s):
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
