@@ -1,8 +1,10 @@
 name: Deploy
 
-# Static site: nothing to build, so just SSH into the VPS and fast-forward
-# the clone at /var/www/aa. nginx serves /var/www/aa/public directly, so a
-# pull is the whole deploy - no restart needed.
+# Static site at https://ekat.ca/aa/: nothing to build, so just SSH into the
+# VPS and fast-forward the clone at /var/www/aa. nginx serves
+# /var/www/aa/public directly, so a pull is the whole deploy - no restart.
+# (Changes to deploy/aa.location.conf are NOT applied automatically; copy it
+# to /etc/nginx/snippets/ and reload by hand.)
 # Needs repo secrets DEPLOY_HOST, DEPLOY_USER, DEPLOY_SSH_KEY, DEPLOY_PORT
 # (same meaning as in the sidebar repo; see README).
 
