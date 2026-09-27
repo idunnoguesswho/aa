@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Meeting sign-off</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- jsPDF is served from this site (vendor/) because the CSP only allows same-origin scripts. -->
+  <script src="vendor/jspdf.umd.min.js" defer></script>
+  <script src="signoff.js" defer></script>
+</head>
+<body>
+  <header class="bar">
+    <a class="back" href="./">Home</a>
+    <h1>Meeting sign-off</h1>
+  </header>
+  <main>
+    <p class="hint">Fill in, sign, and send as a PDF. Nothing is uploaded — the PDF is made on your phone.</p>
+
+    <div class="field">
+      <label for="meeting">Meeting name</label>
+      <input type="text" id="meeting" autocomplete="off" placeholder="e.g. Tuesday Big Book Study">
+    </div>
+
+    <div class="field">
+      <label for="contact">Contact ID</label>
+      <input type="text" id="contact" autocomplete="off" placeholder="Person's ID number">
+    </div>
+
+    <div class="field">
+      <label for="loc">Location</label>
+      <div class="row">
+        <input type="text" id="loc" placeholder="Tap Get location or type it">
+        <button type="button" id="getLoc">Get location</button>
+      </div>
+      <p class="hint" id="locHint">Uses your phone's GPS. You can also type the place.</p>
+    </div>
+
+    <div class="field">
+      <span class="label">Signature</span>
+      <div class="sig-wrap">
+        <canvas id="sig" aria-label="Signature pad, draw with your finger"></canvas>
+        <div class="sig-line"></div><span class="sig-x">✕</span>
+      </div>
+      <div class="sig-actions">
+        <span class="hint">Sign with your finger</span>
+        <button type="button" id="clearSig">Clear</button>
+      </div>
+    </div>
+
+    <button type="button" class="btn" id="makePdf">Create PDF and send</button>
+    <p id="status" role="status"></p>
+  </main>
+</body>
+</html>

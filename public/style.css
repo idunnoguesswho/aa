@@ -1,6 +1,121 @@
-/* Placeholder styles - external file because ekat.ca's CSP blocks inline <style>. */
-:root { color-scheme: light dark; }
+/* ==========================================================================
+   aa - one simple stylesheet for every page.
+   External file on purpose: ekat.ca's CSP blocks inline <style> and style="".
+   Mobile first: single column, large tap targets, system fonts (no downloads).
+   ========================================================================== */
+
+/* ---- Colour tokens (light, then dark) ---- */
+:root {
+  color-scheme: light dark;
+  --bg: #F6F4EF;       /* warm paper */
+  --panel: #FFFFFF;
+  --ink: #1C2530;
+  --muted: #5B6672;
+  --line: #D9D5CC;
+  --accent: #1F4E79;   /* deep blue: links, header */
+  --btn: #F2C200;      /* sign-off button */
+  --ok: #2E7D4F;
+  --err: #B3261E;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12171D; --panel: #1B232C; --ink: #E7EBEF; --muted: #9AA6B2;
+    --line: #2F3A46; --accent: #8DB8E3; --ok: #6BC98F; --err: #F2867E;
+  }
+}
+
+/* ---- Base ---- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; -webkit-text-size-adjust: 100%; }
 body {
-  margin: 0; min-height: 100vh; display: grid; place-items: center;
-  font-family: system-ui, sans-serif; padding: 16px;
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 18px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+main { max-width: 640px; margin: 0 auto; padding: 16px 16px 48px; }
+a { color: var(--accent); }
+h2 { font-size: 1.45rem; line-height: 1.25; margin: 0 0 12px; }
+h3 { font-size: 1.1rem; margin: 20px 0 6px; }
+h4 { font-size: 1rem; margin: 16px 0 4px; color: var(--muted); }
+p, ol, dl { margin: 0 0 14px; }
+ol { padding-left: 1.6em; }
+li { margin-bottom: 6px; }
+:focus-visible { outline: 3px solid var(--btn); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---- Sticky top bar ---- */
+.bar {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; gap: 12px;
+  background: var(--accent); color: #fff;
+  padding: calc(10px + env(safe-area-inset-top, 0px)) 16px 10px;
+}
+@media (prefers-color-scheme: dark) { .bar { background: #0B2239; } }
+.bar h1 { margin: 0; font-size: 1.15rem; line-height: 1.2; }
+.bar .back { color: #fff; text-decoration: none; font-weight: 600; padding: 6px 10px; border: 1px solid rgba(255,255,255,.5); border-radius: 8px; }
+
+/* ---- Buttons & cards ---- */
+.btn {
+  display: block; text-align: center; text-decoration: none; font-weight: 700;
+  background: var(--btn); color: #1C2530; border: 0; border-radius: 10px;
+  padding: 14px 16px; font-size: 1.1rem;
+}
+.card {
+  display: block; text-decoration: none; color: var(--ink);
+  background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+  padding: 18px 16px; margin-bottom: 12px;
+}
+.card strong { display: block; font-size: 1.2rem; color: var(--accent); }
+.card span { color: var(--muted); font-size: 0.95rem; }
+
+/* ---- Readings page ---- */
+.cover { text-align: center; margin: 8px 0 18px; }
+.tag { font-style: italic; color: var(--muted); margin: 0 0 4px; }
+details { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; margin: 18px 0; }
+summary { cursor: pointer; font-weight: 700; padding: 14px 16px; }
+.toc { margin: 0; padding: 0 16px 12px 2.4em; }
+.toc li { margin: 0; }
+.toc a { display: block; padding: 7px 0; text-decoration: none; }   /* tall rows = easy to tap */
+section { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 16px 8px; margin-bottom: 16px; }
+.lead { font-weight: 600; }
+.verse { font-size: 1.05rem; }
+.cite { color: var(--muted); font-size: 0.9rem; font-style: italic; text-align: right; }
+.top { font-size: 0.9rem; text-align: right; }
+dl .kw { padding: 8px 0; border-top: 1px solid var(--line); }
+dt { font-weight: 700; }
+dd { margin: 0; }
+.ref { display: block; color: var(--muted); font-size: 0.9rem; }
+footer { text-align: center; font-size: 0.95rem; }
+
+/* ---- Forms (sign-off + notes) ---- */
+.field { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+label, .label { display: block; font-weight: 600; margin-bottom: 6px; }
+.hint { color: var(--muted); font-size: 0.9rem; margin: 6px 0 0; }
+input[type="text"], textarea {
+  width: 100%; font: inherit; font-size: 1.05rem; color: var(--ink);   /* >=16px stops iOS zoom-on-focus */
+  background: transparent; border: 1px solid var(--line); border-radius: 8px; padding: 11px 12px;
+}
+button {
+  font: inherit; font-weight: 600; border-radius: 8px; padding: 11px 14px; min-height: 44px;
+  border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer;
+}
+button.btn { width: 100%; border: 0; background: var(--btn); color: #1C2530; }
+button:disabled { opacity: 0.55; cursor: default; }
+.row { display: flex; gap: 8px; }
+.row input { flex: 1; min-width: 0; }
+.sig-wrap { position: relative; }
+#sig { display: block; width: 100%; height: 190px; touch-action: none; background: #fff; border: 1px solid var(--line); border-radius: 8px; }
+.sig-line { position: absolute; left: 16px; right: 16px; bottom: 38px; border-top: 1px dashed #9AA8B2; pointer-events: none; }
+.sig-x { position: absolute; left: 16px; bottom: 40px; color: #9AA8B2; font-weight: 600; pointer-events: none; }
+.sig-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+.sig-actions .hint { margin: 0; }
+#status { min-height: 1.5em; margin: 10px 0 0; }
+#status.ok { color: var(--ok); }
+#status.err { color: var(--err); }
+
+/* ---- Print: plain black on white, no chrome ---- */
+@media print {
+  .bar, nav, .top, .btn, footer { display: none; }
+  body { background: #fff; color: #000; }
+  section { border: 0; padding: 0; break-inside: avoid-page; }
 }

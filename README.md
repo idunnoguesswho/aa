@@ -11,6 +11,20 @@ Static site served at **https://ekat.ca/aa/** by nginx on the ekat VPS (`162.35.
 
 **CSP note:** ekat.ca sends a strict Content-Security-Policy (`script-src 'self'; style-src 'self' https://fonts.googleapis.com`, ...), and `/aa` inherits it. No inline `<script>`/`<style>`/`style=""` and no third-party scripts - put CSS/JS in files under `public/`.
 
+## Pages
+
+- `index.html` - home: links to the readings, the sign-off tool and the printable booklet.
+- `readings.html` - *Meeting in a Pocket*, generated from `files/Meeting-in-a-Pocket-3x5.docx` with a tap-to-jump contents list. "Names & Numbers" is a notes box saved only in that phone's browser.
+- `signoff.html` + `signoff.js` - meeting sign-off: meeting name, contact ID, GPS or typed location, finger signature -> PDF built on the phone, then the share sheet (Mail, Messages...) or a download. Nothing is uploaded.
+- `style.css` - the one shared stylesheet (system fonts, light/dark, mobile first).
+- `vendor/jspdf.umd.min.js` - jsPDF 2.5.1, served locally because the CSP blocks CDN scripts.
+
+To rebuild the readings page after editing the Word file (Windows):
+
+```bash
+python tools/build_readings.py public/files/Meeting-in-a-Pocket-3x5.docx public/readings.html
+```
+
 ## Preview locally
 
 ```bash
