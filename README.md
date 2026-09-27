@@ -18,7 +18,7 @@ npx serve public
 
 ## One-time server setup
 
-1. **DNS** (Cloudflare, `ekat.ca` zone): add an `A` record `aa` → the VPS IP, matching `sidebar`'s record (same proxy on/off setting).
+1. **DNS** (Cloudflare, `ekat.ca` zone): add an `A` record `aa` → `162.35.171.10` (the VPS), matching `sidebar`'s record (same proxy on/off setting).
 2. **On the VPS:**
    ```bash
    git clone https://github.com/idunnoguesswho/aa.git /var/www/aa
