@@ -14,16 +14,12 @@ Static site served at **https://ekat.ca/aa/** by nginx on the ekat VPS (`162.35.
 ## Pages
 
 - `index.html` - home: links to the readings, the sign-off tool and the printable booklet.
-- `readings.html` - *Meeting in a Pocket*, generated from `files/Meeting-in-a-Pocket-3x5.docx` with a tap-to-jump contents list. "Names & Numbers" is a notes box saved only in that phone's browser.
+- `readings.html` + `content.js` + `readings.js` - *Meeting in a Pocket* as a small reading app: a table of contents grouped by topic (At the meeting, Prayers, Daily practice, Reflections, Big Book index, Names & numbers) and a reading pane with previous/next through the whole booklet. On a phone the contents list and the reading pane are two screens (`body[data-view]` switches them); at 820px+ they sit side by side. `content.js` holds the booklet text as plain data (hand-maintained to mirror the Word file - see below); `readings.js` renders it and has no content of its own. "Names & Numbers" is a notes box saved only in that phone's browser (localStorage), never sent anywhere.
 - `signoff.html` + `signoff.js` - meeting sign-off: meeting name, contact ID, GPS or typed location, finger signature -> PDF built on the phone, then the share sheet (Mail, Messages...) or a download. Nothing is uploaded.
 - `style.css` - the one shared stylesheet (system fonts, light/dark, mobile first).
 - `vendor/jspdf.umd.min.js` - jsPDF 2.5.1, served locally because the CSP blocks CDN scripts.
 
-To rebuild the readings page after editing the Word file (Windows):
-
-```bash
-python tools/build_readings.py public/files/Meeting-in-a-Pocket-3x5.docx public/readings.html
-```
+`tools/build_readings.py` converts `files/Meeting-in-a-Pocket-3x5.docx` into a flat HTML page and is kept for reference / as a fallback, but `readings.html` no longer runs from its output - editing the booklet now means updating the section data in `content.js` directly (same wording as the Word file, organized into the topic groups above).
 
 ## Preview locally
 

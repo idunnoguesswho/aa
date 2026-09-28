@@ -4,419 +4,54 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Meeting in a Pocket</title>
-  <!-- Generated from Meeting-in-a-Pocket-3x5.docx. Relative paths so it works under /aa/. -->
+  <!-- Relative paths so it works under /aa/. Content lives in content.js;
+       readings.js turns it into the table of contents + reading pane below. -->
   <link rel="stylesheet" href="style.css">
+  <script src="content.js" defer></script>
   <script src="readings.js" defer></script>
 </head>
-<body>
+<body data-view="home">
   <header class="bar">
     <a class="back" href="./">Home</a>
     <h1>Meeting in a Pocket</h1>
+    <a class="signoff-link" href="signoff.html">Sign off</a>
   </header>
-  <main>
-    <div class="cover">
-<p class="tag">If you want to continue drinking, that&#x27;s YOUR business.</p>
-<p class="tag">If you want to stop drinking, that&#x27;s OUR business.</p>
-    </div>
-    <p><a class="btn" href="signoff.html">Sign off a meeting</a></p>
 
-    <nav id="contents" aria-label="Contents">
-      <details open>
-        <summary>Contents</summary>
-        <ol class="toc">
-<li><a href="#responsibility-pledge-of-a-a">Responsibility Pledge of A.A.</a></li>
-<li><a href="#serenity-prayer">Serenity Prayer</a></li>
-<li><a href="#the-alcoholics-anonymous-preamble">The Alcoholics Anonymous Preamble</a></li>
-<li><a href="#how-it-works">How It Works</a></li>
-<li><a href="#the-twelve-steps">The Twelve Steps</a></li>
-<li><a href="#the-twelve-principles">The Twelve Principles</a></li>
-<li><a href="#how-it-works-cont">How It Works (cont.)</a></li>
-<li><a href="#to-stay-sober">To Stay Sober</a></li>
-<li><a href="#the-four-absolutes">The Four Absolutes</a></li>
-<li><a href="#the-twelve-traditions">The Twelve Traditions</a></li>
-<li><a href="#the-promises-of-a-a">The Promises of A.A.</a></li>
-<li><a href="#a-vision-for-you">A Vision for You</a></li>
-<li><a href="#the-tenth-step-questions">The Tenth Step Questions</a></li>
-<li><a href="#how-to-have-a-good-day">How to Have a Good Day</a></li>
-<li><a href="#12-step-prayers">12 Step Prayers</a></li>
-<li><a href="#prayer-of-saint-francis-of-assisi">Prayer of Saint Francis of Assisi</a></li>
-<li><a href="#just-for-today">Just for Today</a></li>
-<li><a href="#gratitude">Gratitude</a></li>
-<li><a href="#pray-daily">Pray Daily…</a></li>
-<li><a href="#abcs-of-meeting-topics">ABCs of Meeting Topics</a></li>
-<li><a href="#acceptance">Acceptance</a></li>
-<li><a href="#humility">Humility</a></li>
-<li><a href="#resentment-prayer">Resentment Prayer</a></li>
-<li><a href="#excerpts-from-step-11">Excerpts from Step 11</a></li>
-<li><a href="#an-index-to-alcoholics-anonymous">An Index to the Big Book</a></li>
-<li><a href="#thy-will-be-done">Thy Will Be Done</a></li>
-<li><a href="#the-lord-s-prayer">The Lord’s Prayer</a></li>
-<li><a href="#how-to-use-this-index">How to Use This Index</a></li>
-<li><a href="#keyword-subject-index">Keyword &amp; Subject Index</a></li>
-<li><a href="#chapter-appendix-map">Chapter &amp; Appendix Map</a></li>
-<li><a href="#names-numbers">Names &amp; Numbers</a></li>
-        </ol>
-      </details>
+  <div class="layout">
+    <!-- Contents: on a phone this is the whole screen until a section is
+         picked; on a wide screen it's a sidebar that stays put. -->
+    <nav id="toc" aria-label="Contents">
+      <p class="tagline" id="tagline"></p>
+      <div id="tocGroups"><!-- filled by readings.js --></div>
+      <p class="hint" id="disclaimer"></p>
     </nav>
 
-<section id="responsibility-pledge-of-a-a">
-<h2>Responsibility Pledge of A.A.</h2>
-<p class="lead">I am responsible. When anyone, anywhere reaches out for help, I want the hand of A.A. always to be there. And for that, I am responsible!</p>
-<p>This Meeting in a Pocket is not affiliated with Alcoholics Anonymous World Services, Inc., or with the General Service Office of Alcoholics Anonymous. The publication of this booklet has not been authorized or endorsed by, and does not imply affiliation with Alcoholics Anonymous World Services, Inc., or with the General Service Office of Alcoholics Anonymous.</p>
-<p>Permission is granted to reproduce all or part of this booklet if it will help get the message to the still-suffering alcoholic.</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="serenity-prayer">
-<h2>Serenity Prayer</h2>
-<p class="verse">God grant me the serenity to accept the things I cannot change;<br>
-the courage to change the things I can;<br>
-and the wisdom to know the difference.</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="the-alcoholics-anonymous-preamble">
-<h2>The Alcoholics Anonymous Preamble</h2>
-<p>Alcoholics Anonymous is a fellowship of men and women who share their experience, strength and hope with each other that they may solve their common problem and help others to recover from alcoholism. The only requirement for membership is a desire to stop drinking. There are no dues or fees for A.A. membership; we are self-supporting through our own contributions. A.A. is not allied with any sect, denomination, politics, organization or institution; does not wish to engage in any controversy; neither endorses nor opposes any causes. Our primary purpose is to stay sober and help other alcoholics to achieve sobriety.</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="how-it-works">
-<h2>How It Works</h2>
-<p>Rarely have we seen a person fail who has thoroughly followed our path. Those who do not recover are people who cannot or will not completely give themselves to this simple program, usually men and women who are constitutionally incapable of being honest with themselves.</p>
-<p>There are such unfortunates. They are not at fault; they seem to have been born that way. They are naturally incapable of grasping and developing a manner of living which demands rigorous honesty. Their chances are less than average. There are those, too, who suffer from grave emotional and mental disorders, but many of them do recover if they have the capacity to be honest.</p>
-<p>Our stories disclose in a general way what we used to be like, what happened, and what we are like now. If you have decided you want what we have and are willing to go to any length to get it—then you are ready to take certain steps.</p>
-<p>At some of these we balked. We thought we could find an easier, softer way. But we could not. With all the earnestness at our command, we beg of you to be fearless and thorough from the very start. Some of us have tried to hold on to our old ideas and the result was nil until we let go absolutely.</p>
-<p>Remember that we deal with alcohol—cunning, baffling, powerful! Without help it is too much for us. But there is One who has all power—that One is God. May you find Him now!</p>
-<p>Half measures availed us nothing. We stood at the turning point. We asked His protection and care with complete abandon.</p>
-<p>Here are the steps we took, which are suggested as a program of recovery:</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="the-twelve-steps">
-<h2>The Twelve Steps</h2>
-<ol><li>We admitted we were powerless over alcohol—that our lives had become unmanageable.</li><li>Came to believe that a Power greater than ourselves could restore us to sanity.</li><li>Made a decision to turn our will and our lives over to the care of God as we understood Him.</li><li>Made a searching and fearless moral inventory of ourselves.</li><li>Admitted to God, to ourselves and to another human being the exact nature of our wrongs.</li><li>Were entirely ready to have God remove all these defects of character.</li><li>Humbly asked Him to remove our shortcomings.</li><li>Made a list of all persons we had harmed and became willing to make amends to them all.</li><li>Made direct amends to such people wherever possible, except when to do so would injure them or others.</li><li>Continued to take personal inventory and when we were wrong promptly admitted it.</li><li>Sought through prayer and meditation to improve our conscious contact with God as we understood Him, praying only for knowledge of His will for us and the power to carry that out.</li><li>Having had a spiritual awakening as the result of these steps, we tried to carry this message to alcoholics and to practice these principles in all our affairs.</li></ol>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="the-twelve-principles">
-<h2>The Twelve Principles</h2>
-<ol><li>Honesty</li><li>Hope</li><li>Surrender</li><li>Courage</li><li>Integrity</li><li>Willingness</li><li>Humility</li><li>Love</li><li>Responsibility</li><li>Discipline</li><li>Awareness</li><li>Service</li></ol>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="how-it-works-cont">
-<h2>How It Works (cont.)</h2>
-<p>Many of us exclaimed, &quot;What an order! I can&#x27;t go through with it.&quot;</p>
-<p>Do not be discouraged. No one among us has been able to maintain anything like perfect adherence to these principles. We are not saints. The point is that we are willing to grow along spiritual lines. The principles we have set down are guides to progress. We claim spiritual progress rather than spiritual perfection.</p>
-<p>Our description of the alcoholic, the chapter to the agnostic, and our personal adventures before and after make clear three pertinent ideas:</p>
-<ol type="a"><li>That we were alcoholic and could not manage our own lives.</li><li>That probably no human power could have relieved our alcoholism.</li><li>That God could and would if He were sought.</li></ol>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="to-stay-sober">
-<h2>To Stay Sober</h2>
-<p class="lead">Don&#x27;t Drink.</p>
-<p class="lead">Go to Meetings.</p>
-<p class="lead">Read the Big Book.</p>
-<p class="lead">Get a Sponsor.</p>
-<p class="lead">Work the Steps.</p>
-<p class="lead">Help another Alcoholic.</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="the-four-absolutes">
-<h2>The Four Absolutes</h2>
-<p class="verse">Honesty — Is it true or is it false?<br>
-Unselfishness — How will this affect others?<br>
-Love — Is it ugly or is it beautiful?<br>
-Purity — Is it right or is it wrong?</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="the-twelve-traditions">
-<h2>The Twelve Traditions</h2>
-<ol><li>Our common welfare should come first; personal recovery depends upon A.A. unity.</li><li>For our group purpose there is but one ultimate authority—a loving God as He may express Himself in our group conscience. Our leaders are but trusted servants; they do not govern.</li><li>The only requirement for A.A. membership is a desire to stop drinking.</li><li>Each group should be autonomous except in matters affecting other groups or A.A. as a whole.</li><li>Each group has but one primary purpose—to carry its message to the alcoholic who still suffers.</li><li>An A.A. group ought never endorse, finance, or lend the A.A. name to any related facility or outside enterprise, lest problems of money, property, and prestige divert us from our primary purpose.</li><li>Every A.A. group ought to be fully self-supporting, declining outside contributions.</li><li>Alcoholics Anonymous should remain forever non-professional, but our service centers may employ special workers.</li><li>A.A., as such, ought never be organized; but we may create service boards or committees directly responsible to those they serve.</li><li>Alcoholics Anonymous has no opinion on outside issues; hence the A.A. name ought never be drawn into public controversy.</li><li>Our public relations policy is based on attraction rather than promotion; we need always maintain personal anonymity at the level of press, radio, and films.</li><li>Anonymity is the spiritual foundation of all our traditions, ever reminding us to place principles before personalities.</li></ol>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="the-promises-of-a-a">
-<h2>The Promises of A.A.</h2>
-<p>If we are painstaking about this phase of our development, we will be amazed before we are halfway through. We are going to know a new freedom and a new happiness. We will not regret the past nor wish to shut the door on it. We will comprehend the word serenity and we will know peace. No matter how far down the scale we have gone, we will see how our experience can benefit others. The feeling of uselessness and self-pity will disappear. We will lose interest in selfish things and gain interest in our fellows. Self-seeking will slip away. Our whole attitude and outlook upon life will change. Fear of people and of economic insecurity will leave us. We will intuitively know how to handle situations which used to baffle us. We will suddenly realize that God is doing for us what we could not do for ourselves.</p>
-<p>Are these extravagant promises? We think not. They are being fulfilled among us – sometimes quickly, sometimes slowly. They will always materialize if we work for them.</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="a-vision-for-you">
-<h2>A Vision for You</h2>
-<p>Our book is meant to be suggestive only. We realize we know only a little. God will constantly disclose more to you and to us. Ask Him in your morning meditation what you can do each day for the man who is still sick. The answers will come, if your own house is in order.</p>
-<p>But obviously you cannot transmit something you haven&#x27;t got. See to it that your relationship with Him is right, and great events will come to pass for you and countless others. This is the Great Fact for us.</p>
-<p>Abandon yourself to God as you understand God. Admit your faults to Him and to your fellows. Clear away the wreckage of your past. Give freely of what you find and join us. We shall be with you in the Fellowship of the Spirit, and you will surely meet some of us as you trudge the Road of Happy Destiny.</p>
-<p>May God bless you and keep you until then.</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="the-tenth-step-questions">
-<h2>The Tenth Step Questions</h2>
-<ol><li>How was I resentful?</li><li>How was I selfish, egotistical, or self-seeking?</li><li>How was I dishonest?</li><li>How was I afraid?</li><li>Do I owe an apology?</li><li>Have I wrongly kept secret?</li><li>Was I unkind, cruel, harsh, or unfeeling?</li><li>Was I unloving, cold, or indifferent?</li><li>What could I have done better?</li><li>Was I thinking of myself most of the time?</li><li>Was I thinking of what I could do for others?</li><li>Was I thinking what I could pack into the stream of life?</li></ol>
-<p class="lead">Who did I help today? What did I accomplish today? What am I grateful for today? Who needs my prayers today?</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="how-to-have-a-good-day">
-<h2>How to Have a Good Day</h2>
-<p class="verse">Take time to laugh: it is the music of the soul.<br>
-Take time to think: it is the source of all power.<br>
-Take time to play: it is the source of perpetual youth.<br>
-Take time to read: it is the fountain of wisdom.<br>
-Take time to pray: it is the greatest power on Earth.<br>
-Take time to love and be loved: it is a God-given privilege.<br>
-Take time to be friendly: it is the road to happiness.<br>
-Take time to give: it is too short a day to be selfish.<br>
-Take time to work: it is the price of success.</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="12-step-prayers">
-<h2>12 Step Prayers</h2>
-<h3>Step 1 (p. 46)</h3>
-<p>God, Creative Intelligence, Universal Mind, Spirit of Nature or Spirit of the Universe my name is ______, and I&#x27;m a real alcoholic... and I need your help today.</p>
-<h3>Step 2 (p. 59)</h3>
-<p>God, I&#x27;m standing at the turning point right now. Give me your protection and care as I abandon myself to you and give up my old ways and my old ideas just for today.</p>
-<h3>Step 3 (p. 63)</h3>
-<p>God, I offer myself to Thee—to build with me and to do with me as Thou wilt. Relieve me of the bondage of self, that I may better do Thy will. Take away my difficulties, that victory over them may bear witness to those I would help of Thy Power, Thy Love, and Thy Way of life. May I do Thy will always!</p>
-<p>God, Take my will and my life. Guide me in my recovery. Show me how to live. (p. 59)</p>
-<h3>Step 4</h3>
-<h4>When in Doubt (p. 13)</h4>
-<p>&quot;I was to sit quietly when in doubt, asking only for direction and strength to meet my problems as He would have me. Never was I to pray for myself, except as my requests bore on my usefulness to others. Then only might I expect to receive. But that would be in great measure.&quot;</p>
-<h4>When I am Disturbed by the Conduct (Symptoms) of Others (p. 67)</h4>
-<p>This is a sick man. How can I be helpful to him? God save me from being angry. Thy will be done.</p>
-<p>God help me to show this person the same tolerance, pity and patience that I would cheerfully grant a sick friend. This is a sick person, how can I be helpful to him? God save me from being angry. Thy will be done. (see above and p. 141 of 12&amp;12)</p>
-<h4>When Afraid (p. 68)</h4>
-<p>God, relieve me of this fear and direct my attention to what you would have me be.</p>
-<h3>Step 5 (p. 75)</h3>
-<p>God I thank you from the bottom of my heart that I know you better. Help me become aware of anything I have omitted discussing with another person. Help me to do what is necessary to walk a free man at last.</p>
-<h3>Step 6 (p. 76)</h3>
-<p>God help me become willing to let go of all the things to which I still cling. Help me to be ready to let You remove all of these defects, that Your will and purpose may take their place.</p>
-<h3>Step 7 (p. 76)</h3>
-<p>My Creator, I am now willing that you should have all of me, good and bad. I pray that you now remove from me every single defect of character which stands in the way of my usefulness to you and my fellows. Grant me strength, as I go out from here, to do your bidding.</p>
-<h3>Step 8 (p. 76)</h3>
-<p>God help me to become willing to sweep away the debris of self will and self-reliant living. Thy will be done for this person as well as for me.</p>
-<h3>Step 9 (p. 78-80)</h3>
-<p>God give me the strength and direction to do the right thing no matter what the consequences may be. Help me to consider others and not harm them in any way. Help me to consult with others before I take any actions that would cause me to be sorry. Help me to not repeat such behaviors. Show me the way of Patience, Tolerance, Kindliness, and Love and help me live the spiritual life.</p>
-<h3>Step 10 (p. 84-5)</h3>
-<p>God remove the selfishness, dishonesty, resentment, and fear that has cropped up in my life right now. Help me to discuss this with someone immediately and make amends quickly if I have harmed anyone. Help me to cease fighting anything and anyone. Show me where I may be helpful to someone else. Help me react sanely; not cocky or afraid. How can I best serve You — Your will, not mine be done.</p>
-<p>How can I best serve Thee—Thy will (not mine) be done. (p. 85)</p>
-<h3>Step 11 (p. 87-8)</h3>
-<p>God, I&#x27;m agitated and doubtful right now. Help me to stop and remember that I&#x27;ve made a decision to let You be my God. Give me the right thoughts and actions. God save me from fear, anger, worry, self-pity, or foolish decisions that Your will not mine be done.</p>
-<h3>Step 12 (p. 89)</h3>
-<p>Dear God, Having had a spiritual experience, I must now remember that &quot;faith without works is dead.&quot; And practical experience shows that nothing will so much insure immunity from drinking as intensive work with other alcoholics. So, God, please help me to carry this message to other alcoholics! Provide me with the guidance and wisdom to talk with another alcoholic because I can help when no one else can. Help me secure his confidence and remember he is ill.</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="prayer-of-saint-francis-of-assisi">
-<h2>Prayer of Saint Francis of Assisi</h2>
-<p class="verse">Lord, make me a channel of thy peace.<br>
-That where there is hatred, I may bring love;<br>
-That where there is wrong, I may bring the spirit of forgiveness;<br>
-That where there is discord, I may bring harmony;<br>
-That where there is error, I may bring truth;<br>
-That where there is doubt, I may bring faith;<br>
-That where there is despair, I may bring hope;<br>
-That where there are shadows, I may bring light;<br>
-That where there is sadness, I may bring joy.<br>
-Lord, grant that I may seek rather<br>
-to comfort than to be comforted;<br>
-to understand, than to be understood;<br>
-to love, than to be loved.<br>
-For it is by self-forgetting that one finds;<br>
-It is by forgiving that one is forgiven;<br>
-It is by dying that one awakens to Eternal Life.</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="just-for-today">
-<h2>Just for Today</h2>
-<p>Just for today I will try to live through this day only, and not tackle my whole life problems at once. I can do something for twelve hours that would appall me if I felt that I had to keep it up for a lifetime.</p>
-<p>Just for today I will be happy. This assumes to be true what Abraham Lincoln said that, “most folks are as happy as they make up their minds to be.”</p>
-<p>Just for today I will adjust myself to what is, and not try to adjust everything to my own desires. I will take my “luck” as it comes, and fit myself to it.</p>
-<p>Just for today I will try to strengthen my mind. I will study. I will learn something useful. I will not be a mental loafer. I will read something that requires effort, thought and concentration.</p>
-<p>Just for today I will exercise my soul in three ways: I will do somebody a good turn, and not get found out; if anybody knows of it, it will not count. I will do at least two things I don’t want to do—just for exercise. I will not show anyone that my feelings are hurt: they may be hurt but today I will not show it.</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="gratitude">
-<h2>Gratitude</h2>
-<p class="verse">Thank you (higher power),<br>
-For all that You have given,<br>
-For all that You have taken,<br>
-And, for all that You have left me.</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="pray-daily">
-<h2>Pray Daily…</h2>
-<p>God is easier to talk to than most people</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="abcs-of-meeting-topics">
-<h2>ABCs of Meeting Topics</h2>
-<p>Acceptance, Amends, Anonymity</p>
-<p>Behavior, Belonging, Blackouts</p>
-<p>Conscience, Complacency, Complex</p>
-<p>Desire, Decisions, Depression</p>
-<p>Easy-Does-It, Emotions, Egos</p>
-<p>Faith, Fear, Fellowship, Fatigue</p>
-<p>Gratitude, Gossip, Guilt, Grace</p>
-<p>Humility, Hope, Honesty, Happiness</p>
-<p>Inferiority, Illness, Immaturity, Inside</p>
-<p>Jealousy, Joy, Judging</p>
-<p>Kindness, Knowledge</p>
-<p>Love, Loneliness, Live-Let-Live</p>
-<p>Meetings, Morals, Meditation</p>
-<p>New Life, Ninth Step, Newcomers</p>
-<p>Obligations, One day-at-a-time</p>
-<p>Prayer, Personalities, Principles</p>
-<p>Quality vs. Quantity, Quiet Time</p>
-<p>Resentments, Recovery, Remorse</p>
-<p>Surrender, Serenity, Spirituality</p>
-<p>Temper, Tolerance, Truth, Today</p>
-<p>Unselfish, Unity, Understanding</p>
-<p>Vanity, Values, Virtues, Vulgarity</p>
-<p>Worry, Way of Life, Willingness</p>
-<p>YZ. Yesterday, Youth, Zest for Sobriety.</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="acceptance">
-<h2>Acceptance</h2>
-<p class="lead">A member’s experience</p>
-<p>Acceptance is the answer to all my problems today. When I am disturbed, it is because I find some person, place, thing, or situation—some fact of my life—unacceptable to me, and I can find no serenity until I accept that person, place, thing, or situation as being exactly the way it is supposed to be at this moment. Nothing, absolutely nothing, happens in God’s world by mistake.</p>
-<p class="cite">Alcoholics Anonymous p.417</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="humility">
-<h2>Humility</h2>
-<p class="lead">Thought to Ponder</p>
-<p>Humility, as I see it, grows out of an urge to learn from everyone and everything.</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="resentment-prayer">
-<h2>Resentment Prayer</h2>
-<p>This was our course: We realized that the people who wronged us were perhaps spiritually sick.</p>
-<p>Though we did not like their symptoms and the way these disturbed us, they, like ourselves, were sick too. We asked God to help us show them the same tolerance, pity and patience that we would cheerfully grant a sick friend. When a person offended, we said to ourselves, “This is a sick man. How can we be helpful to him? God save me from being angry. Thy will be done.”</p>
-<p class="cite">Alcoholics Anonymous p 66-67</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="excerpts-from-step-11">
-<h2>Excerpts from Step 11</h2>
-<p>acceptance is the answer to all my problems today. When I am disturbed, it is because I find some person, place, thing, or situation—some fact of my life—unacceptable to me, and I can find no serenity until I accept that person, place, thing, or situation as being exactly the way it is supposed to be at this moment. Nothing, absolutely nothing, happens in God’s world by mistake.</p>
-<p class="cite">Alcoholics Anonymous p 87-88</p>
-<p>Practical experience shows that nothing will so much insure immunity from drinking as intensive work with other alcoholics. It works when other activities fail. This is our twelfth suggestion: Carry this message to other alcoholics! You can help when no one else can. You can secure their confidence when others fail. Remember they are very ill.</p>
-<p>Life will take on new meaning. To watch people recover, to see them help others, to watch loneliness vanish, to have a fellowship grow up about you, to have a host of friends—this is an experience you must not miss. We know you will not want to miss it.</p>
-<p class="cite">Alcoholics Anonymous p 89</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="an-index-to-alcoholics-anonymous">
-<h2>An Index to the Big Book</h2>
-<p class="lead">Keywords · Steps · Traditions</p>
-<p class="lead">Keyed to standard 4th-edition (2001) pagination.</p>
-<p class="lead">Compiled— Sept. 2026</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="thy-will-be-done">
-<h2>Thy Will Be Done</h2>
-<p>As we go through the day we pause, when agitated or doubtful, and ask for the right thought or action. We constantly remind ourselves we are no longer running the show, humbly saying to ourselves many times each day “Thy will be done.” We are then in much less danger of excitement, fear, anger, worry, self-pity, or foolish decisions. We become much more efficient. We do not tire so easily, for we are not burning up energy foolishly as we did when we were trying to arrange life to suit ourselves.</p>
-<p class="cite">Alcoholics Anonymous p. 88</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="the-lord-s-prayer">
-<h2>The Lord’s Prayer</h2>
-<p class="verse">Our Father, who art in heaven, hallowed be thy name.<br>
-Thy kingdom come, thy will be done, on earth as it is in heaven.<br>
-Give us this day our daily bread,<br>
-and forgive us our trespasses, as we forgive those who trespass against us.<br>
-And lead us not into temptation, but deliver us from evil.<br>
-For thine is the kingdom, and the power, and the glory, forever. Amen.</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="how-to-use-this-index">
-<h2>How to Use This Index</h2>
-<p>Three parts follow: the Twelve Steps with where each is stated and expanded; the Twelve Traditions (short form) with a pointer to the long form; and an alphabetical keyword index. A chapter/appendix page map closes the booklet.</p>
-<p>Page ranges reflect the well-documented structure of the 4th edition (2001), cross-checked against multiple A.A.-community references, not a scan of a physical copy. A few single-page citations for famous passages (the Steps list, the Seventh Step Prayer, &quot;The Promises&quot;) are commonly cited locations — worth a quick spot-check against your own copy. Personal-story pages are not cited individually since that section changes across printings.</p>
-<p>Passages from the book&#x27;s narrative text are paraphrased or briefly labeled here, not reproduced at length. The Steps and Traditions are given in full, consistent with A.A. World Services&#x27; long-standing permission for their noncommercial reproduction.</p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="keyword-subject-index">
-<h2>Keyword &amp; Subject Index</h2>
-<dl>
-<div class="kw"><dt>Acceptance</dt><dd>coming to honest terms with alcoholism and reality. <span class="ref">Chs.3–5, pp.30–71; Stories</span></dd></div>
-<div class="kw"><dt>Agnostics/atheism</dt><dd>the book&#x27;s address to skeptics of a religious Higher Power. <span class="ref">Ch.4, pp.44–57</span></dd></div>
-<div class="kw"><dt>Alcoholism as illness</dt><dd>the disease/allergy concept. <span class="ref">Dr&#x27;s Opinion; Ch.3, pp.30–43</span></dd></div>
-<div class="kw"><dt>Amends, making</dt><dd>Steps 8–9, listing and repairing harm done. <span class="ref">Ch.6, pp.76–84</span></dd></div>
-<div class="kw"><dt>Anger</dt><dd>see Resentment.</dd></div>
-<div class="kw"><dt>Anonymity</dt><dd>protecting identity; principles before personalities. <span class="ref">Trad. 11–12; App.I, pp.561–566</span></dd></div>
-<div class="kw"><dt>Belief/Higher Power</dt><dd>a power greater than oneself, self-defined. <span class="ref">Ch.4, pp.44–57; Ch.5, pp.58–71</span></dd></div>
-<div class="kw"><dt>Character defects</dt><dd>shortcomings addressed in Steps 6–7. <span class="ref">Ch.6, pp.75–76</span></dd></div>
-<div class="kw"><dt>Compulsion of mind</dt><dd>the obsession preceding the first drink. <span class="ref">Ch.3, pp.30–43</span></dd></div>
-<div class="kw"><dt>Craving, phenomenon of</dt><dd>physical reaction following the first drink. <span class="ref">Dr&#x27;s Opinion; Ch.3, pp.30–43</span></dd></div>
-<div class="kw"><dt>Denial</dt><dd>resisting the seriousness of one&#x27;s drinking. <span class="ref">Ch.3, pp.30–43</span></dd></div>
-<div class="kw"><dt>Dishonesty</dt><dd>an obstacle named from the outset. <span class="ref">Ch.5 p.58; Ch.6 pp.64–71</span></dd></div>
-<div class="kw"><dt>Ego/self-centeredness</dt><dd>named as the root of most troubles. <span class="ref">Ch.5, p.62</span></dd></div>
-<div class="kw"><dt>Employers, relations with</dt><dd>guidance for and about alcoholic employees. <span class="ref">Ch.10, pp.136–150</span></dd></div>
-<div class="kw"><dt>Faith</dt><dd>distinct from religious doctrine. <span class="ref">Ch.4, pp.44–57</span></dd></div>
-<div class="kw"><dt>Family relationships</dt><dd>rebuilding home life in recovery. <span class="ref">Ch.8, pp.104–121; Ch.9, pp.122–135</span></dd></div>
-<div class="kw"><dt>Fear</dt><dd>Step 4 inventory of self-created fears. <span class="ref">Ch.6, pp.67–68</span></dd></div>
-<div class="kw"><dt>Fellowship</dt><dd>alcoholics helping alcoholics. <span class="ref">Ch.2, pp.17–29</span></dd></div>
-<div class="kw"><dt>Financial insecurity</dt><dd>addressed in the inventory instructions. <span class="ref">Ch.6, pp.64–71</span></dd></div>
-<div class="kw"><dt>Forgiveness</dt><dd>implicit in the amends process. <span class="ref">Ch.6, pp.76–84</span></dd></div>
-<div class="kw"><dt>God, as we understood Him</dt><dd>the program&#x27;s individualized language. <span class="ref">Steps 3, 11; p.63; pp.85–88</span></dd></div>
-<div class="kw"><dt>Gratitude</dt><dd>a recurring theme of long sobriety. <span class="ref">Personal Stories I–III</span></dd></div>
-<div class="kw"><dt>Group conscience</dt><dd>the group&#x27;s collective authority. <span class="ref">Trad. 2; App.I, pp.561–566</span></dd></div>
-<div class="kw"><dt>Half measures</dt><dd>warning that partial effort &quot;availed us nothing.&quot; <span class="ref">Ch.5, p.59</span></dd></div>
-<div class="kw"><dt>Honesty</dt><dd>framed as essential from Ch.5 onward. <span class="ref">Ch.5 p.58; Ch.6 pp.64–71</span></dd></div>
-<div class="kw"><dt>Humility</dt><dd>central to Steps 6, 7, 12; sponsorship. <span class="ref">Ch.6 pp.75–76; Ch.7 pp.89–103</span></dd></div>
-<div class="kw"><dt>Inventory, moral (4th Step)</dt><dd>self-examination of resentments, fears, conduct. <span class="ref">Ch.6, pp.64–71</span></dd></div>
-<div class="kw"><dt>Isolation</dt><dd>loneliness in drinking and recovery. <span class="ref">Ch.2, pp.17–29</span></dd></div>
-<div class="kw"><dt>Meditation</dt><dd>part of Step 11 practice. <span class="ref">Ch.6, pp.85–88</span></dd></div>
-<div class="kw"><dt>Membership requirements</dt><dd>the sole requirement for A.A. membership. <span class="ref">Trad. 3; App.I, pp.561–566</span></dd></div>
-<div class="kw"><dt>Newcomers, working with</dt><dd>Step 12 practice of carrying the message. <span class="ref">Ch.7, pp.89–103</span></dd></div>
-<div class="kw"><dt>Powerlessness</dt><dd>the admission at the heart of Step 1. <span class="ref">Ch.3 pp.30–43; Ch.5 pp.58–60</span></dd></div>
-<div class="kw"><dt>Prayer</dt><dd>Third, Seventh, Eleventh Step prayers. <span class="ref">pp.63, 76, 85–88</span></dd></div>
-<div class="kw"><dt>Pride</dt><dd>an obstacle in working with others. <span class="ref">Ch.7, pp.89–103</span></dd></div>
-<div class="kw"><dt>Promises, The</dt><dd>changes to expect &quot;if we are painstaking.&quot; <span class="ref">Ch.6, pp.83–84</span></dd></div>
-<div class="kw"><dt>Public relations policy</dt><dd>attraction rather than promotion. <span class="ref">Trad. 11; App.I, pp.561–566</span></dd></div>
-<div class="kw"><dt>Rationalization</dt><dd>the mind&#x27;s justification for drinking. <span class="ref">Ch.3, pp.30–43</span></dd></div>
-<div class="kw"><dt>Relapse/slips</dt><dd>risk of, and recovery from, a return to drinking. <span class="ref">Ch.3 pp.30–43; Stories</span></dd></div>
-<div class="kw"><dt>Religion, relationship to</dt><dd>distinguished from any specific doctrine. <span class="ref">Ch.4 pp.44–57; App.V p.572</span></dd></div>
-<div class="kw"><dt>Resentment</dt><dd>named &quot;the number one&quot; offender. <span class="ref">Ch.6, p.64</span></dd></div>
-<div class="kw"><dt>Rock bottom</dt><dd>the point of surrender in personal accounts. <span class="ref">Personal Stories I–III</span></dd></div>
-<div class="kw"><dt>Self-supporting (finances)</dt><dd>declining outside contributions. <span class="ref">Trad. 7; App.I, pp.561–566</span></dd></div>
-<div class="kw"><dt>Sex conduct, inventory of</dt><dd>examining past and future conduct. <span class="ref">Ch.6, pp.68–70</span></dd></div>
-<div class="kw"><dt>Sobriety, maintaining</dt><dd>day-to-day practice of the program. <span class="ref">Ch.6, pp.72–88</span></dd></div>
-<div class="kw"><dt>Sponsorship</dt><dd>one alcoholic guiding another. <span class="ref">Ch.7, pp.89–103</span></dd></div>
-<div class="kw"><dt>Spiritual awakening</dt><dd>the result described in Step 12. <span class="ref">Ch.6 pp.83–84; App.II pp.567–568</span></dd></div>
-<div class="kw"><dt>Spiritual experience</dt><dd>awakenings are often gradual, not sudden. <span class="ref">App.II, pp.567–568</span></dd></div>
-<div class="kw"><dt>Surrender</dt><dd>the decision at the heart of Step 3. <span class="ref">Ch.5, p.63</span></dd></div>
-<div class="kw"><dt>Tolerance</dt><dd>urged especially toward family early on. <span class="ref">Ch.9, pp.122–135</span></dd></div>
-<div class="kw"><dt>Twelve Concepts</dt><dd>A.A.&#x27;s service-structure principles. <span class="ref">App.VII, pp.574–575</span></dd></div>
-<div class="kw"><dt>Unity</dt><dd>the Fellowship&#x27;s first concern. <span class="ref">Trad. 1; App.I, pp.561–566</span></dd></div>
-<div class="kw"><dt>Unmanageability</dt><dd>the second half of the Step 1 admission. <span class="ref">Ch.3 pp.30–43; Ch.5 pp.58–60</span></dd></div>
-<div class="kw"><dt>Willingness</dt><dd>the disposition required for Step 6. <span class="ref">Ch.6, p.75</span></dd></div>
-<div class="kw"><dt>Wives, message to</dt><dd>a chapter addressed to spouses. <span class="ref">Ch.8, pp.104–121</span></dd></div>
-<div class="kw"><dt>Women alcoholics</dt><dd>acknowledged in the Fellowship&#x27;s growth. <span class="ref">Foreword 2nd Ed., pp.xv–xxi</span></dd></div></dl>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="chapter-appendix-map">
-<h2>Chapter &amp; Appendix Map</h2>
-<p>4th edition (2001) pagination.</p>
-<dl>
-<div class="kw"><dt>Doctor&#x27;s Opinion</dt><dd>pp. xxv–xxxii</dd></div>
-</dl><ol><li>Bill&#x27;s Story — pp. 1–16</li><li>There Is a Solution — pp. 17–29</li><li>More About Alcoholism — pp. 30–43</li><li>We Agnostics — pp. 44–57</li><li>How It Works — pp. 58–71</li><li>Into Action — pp. 72–88</li><li>Working With Others — pp. 89–103</li><li>To Wives — pp. 104–121</li><li>The Family Afterward — pp. 122–135</li><li>To Employers — pp. 136–150</li><li>A Vision For You — pp. 151–164</li></ol>
-<dl>
-<div class="kw"><dt>Personal Stories I–III</dt><dd>pp. 165–559 (varies)</dd></div>
-<div class="kw"><dt>App. I — A.A. Tradition (long form)</dt><dd>pp. 561–566</dd></div>
-<div class="kw"><dt>App. II — Spiritual Experience</dt><dd>pp. 567–568</dd></div>
-<div class="kw"><dt>App. III — Medical View</dt><dd>pp. 569–570</dd></div>
-<div class="kw"><dt>App. IV — The Lasker Award</dt><dd>p. 571</dd></div>
-<div class="kw"><dt>App. V — Religious View</dt><dd>p. 572</dd></div>
-<div class="kw"><dt>App. VI — Contact A.A.</dt><dd>p. 573</dd></div>
-<div class="kw"><dt>App. VII — Twelve Concepts</dt><dd>pp. 574–575</dd></div></dl>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
-<section id="names-numbers">
-<h2>Names &amp; Numbers</h2>
-<p class="hint">Jot down phone numbers here. They stay on this phone only (saved in this browser, never sent anywhere).</p>
-<label class="sr-only" for="names">Names and numbers</label>
-<textarea id="names" rows="10" placeholder="Name – number"></textarea>
-<p class="hint" id="namesStatus" role="status"></p>
-<p class="top"><a href="#contents">Back to contents</a></p>
-</section>
+    <!-- Reading pane: on a phone this replaces the contents list; on a
+         wide screen it sits beside it. -->
+    <main id="reading">
+      <div class="reading-head">
+        <button type="button" id="backBtn" class="back-inline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+          Contents
+        </button>
+        <span class="position" id="position"></span>
+      </div>
+      <article id="article" tabindex="-1"><!-- filled by readings.js --></article>
+      <nav class="pager" aria-label="Previous and next section">
+        <button type="button" id="prevBtn" class="pager-btn" hidden></button>
+        <button type="button" id="nextBtn" class="pager-btn pager-next" hidden></button>
+      </nav>
+    </main>
+  </div>
 
-    <footer>
-      <p><a href="files/Meeting-in-a-Pocket-3x5.docx" download>Download the printable booklet (Word, 3×5)</a></p>
-    </footer>
-  </main>
+  <!-- Sign-off, pinned within thumb reach on a phone; hidden on wide
+       screens where the header link already covers it. -->
+  <div class="mobile-signoff">
+    <a class="btn" href="signoff.html">Meeting sign-off</a>
+  </div>
+
+  <footer>
+    <p><a href="files/Meeting-in-a-Pocket-3x5.docx" download>Download the printable booklet (Word, 3&times;5)</a></p>
+  </footer>
 </body>
 </html>

@@ -51,8 +51,12 @@ li { margin-bottom: 6px; }
   padding: calc(10px + env(safe-area-inset-top, 0px)) 16px 10px;
 }
 @media (prefers-color-scheme: dark) { .bar { background: #0B2239; } }
-.bar h1 { margin: 0; font-size: 1.15rem; line-height: 1.2; }
+.bar h1 { margin: 0; font-size: 1.15rem; line-height: 1.2; flex-grow: 1; }
 .bar .back { color: #fff; text-decoration: none; font-weight: 600; padding: 6px 10px; border: 1px solid rgba(255,255,255,.5); border-radius: 8px; }
+/* Header sign-off entry point: only makes sense once there's room beside
+   the title, so it's hidden below the two-column breakpoint (the pinned
+   .mobile-signoff bar covers phones instead). */
+.bar .signoff-link { display: none; color: #fff; text-decoration: none; font-weight: 700; padding: 6px 12px; background: rgba(255,255,255,.18); border-radius: 999px; }
 
 /* ---- Buttons & cards ---- */
 .btn {
@@ -85,7 +89,7 @@ dl .kw { padding: 8px 0; border-top: 1px solid var(--line); }
 dt { font-weight: 700; }
 dd { margin: 0; }
 .ref { display: block; color: var(--muted); font-size: 0.9rem; }
-footer { text-align: center; font-size: 0.95rem; }
+footer { text-align: center; font-size: 0.95rem; max-width: 1100px; margin: 0 auto; padding: 16px 16px 32px; }
 
 /* ---- Forms (sign-off + notes) ---- */
 .field { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
@@ -118,4 +122,104 @@ button:disabled { opacity: 0.55; cursor: default; }
   .bar, nav, .top, .btn, footer { display: none; }
   body { background: #fff; color: #000; }
   section { border: 0; padding: 0; break-inside: avoid-page; }
+}
+
+/* ==========================================================================
+   Readings app (readings.html): a table of contents + a reading pane.
+   Phone: one screen at a time, switched with body[data-view].
+   Wide screen: both panes side by side, data-view is ignored.
+   ========================================================================== */
+.layout { max-width: 1100px; margin: 0 auto; padding: 8px 16px 24px; }
+main#reading, nav#toc { max-width: none; margin: 0; padding: 0; }
+
+/* ---- Contents (nav#toc) ---- */
+#toc { padding: 8px 0 8px; }
+.tagline { font-style: italic; color: var(--muted); margin: 0 0 16px; }
+.toc-group { margin-bottom: 18px; }
+.toc-group h2 {
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 8px;
+}
+.toc-list {
+  list-style: none; margin: 0; padding: 0;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+}
+.toc-list li { margin: 0; border-bottom: 1px solid var(--line); }
+.toc-list li:last-child { border-bottom: 0; }
+.toc-btn {
+  width: 100%; min-height: 48px; padding: 12px 14px; box-sizing: border-box;
+  border: 0; background: transparent; color: var(--ink); font: inherit; font-size: 1rem;
+  text-align: left; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
+.toc-btn .chev { flex-shrink: 0; color: var(--muted); }
+.toc-btn[aria-current="true"] { background: var(--accent); color: #fff; font-weight: 700; }
+.toc-btn[aria-current="true"] .chev { color: #fff; }
+#toc .hint { padding: 4px 2px 16px; }
+
+/* ---- Reading pane ---- */
+.reading-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; min-height: 32px; }
+.back-inline {
+  display: none; align-items: center; gap: 4px; border: 0; background: transparent; color: var(--accent);
+  font: inherit; font-weight: 700; font-size: 1rem; padding: 6px 4px 6px 0; cursor: pointer; min-height: 44px;
+}
+.position { color: var(--muted); font-size: 0.9rem; }
+#article { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px 18px; outline: none; }
+#article h2 { margin-top: 0; }
+#article .kicker { margin: 0 0 2px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.78rem; color: var(--accent); }
+
+/* Content block types, rendered by readings.js from content.js */
+.rblock { margin: 0 0 14px; }
+.rblock-p { white-space: pre-line; }
+.rblock-h { font-weight: 700; margin: 18px 0 4px; font-size: 1.05rem; }
+.rblock-cite { color: var(--muted); font-size: 0.9rem; font-style: italic; margin: -8px 0 12px; }
+.rblock-n { display: flex; gap: 12px; align-items: flex-start; }
+.rblock-n .badge {
+  flex-shrink: 0; width: 28px; height: 28px; border: 2px solid var(--accent); border-radius: 999px;
+  display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; color: var(--accent);
+}
+.rblock-lead strong { display: block; }
+.rblock-kv { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.rblock-kv .ref { display: block; color: var(--muted); font-size: 0.9rem; font-style: italic; }
+.rblock-row { display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.rblock-row span:last-child { color: var(--muted); white-space: nowrap; }
+
+/* ---- Previous / next through the whole booklet ---- */
+.pager { margin-top: 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.pager-btn {
+  width: 100%; min-height: 56px; padding: 10px 14px; box-sizing: border-box; text-align: left;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--panel); color: var(--ink);
+  display: flex; flex-direction: column; gap: 2px; cursor: pointer; font: inherit;
+}
+.pager-btn .k { font-size: 0.8rem; color: var(--muted); }
+.pager-btn .t { font-size: 1rem; font-weight: 700; }
+.pager-next { text-align: right; align-items: flex-end; }
+
+/* ---- Sign-off pinned within reach on a phone ---- */
+.mobile-signoff {
+  position: sticky; bottom: 0; z-index: 9;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  background: var(--bg); border-top: 1px solid var(--line);
+}
+.mobile-signoff .btn { margin: 0; }
+
+/* ---- Phone: one screen at a time ---- */
+body[data-view="home"] #reading { display: none; }
+body[data-view="read"] #toc { display: none; }
+body[data-view="read"] .back-inline { display: inline-flex; }
+
+/* ---- Wide screen: contents + reading pane side by side ---- */
+@media (min-width: 820px) {
+  .bar .signoff-link { display: inline-block; }
+  main, .layout { max-width: 1100px; }
+  .layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 24px; align-items: start; padding: 24px 16px 48px; }
+  body[data-view="home"] #reading, body[data-view="read"] #toc { display: block; }
+  #toc { position: sticky; top: 76px; max-height: calc(100vh - 96px); overflow-y: auto; padding: 0; }
+  .back-inline { display: none !important; }
+  .mobile-signoff { display: none; }
+}
+
+@media print {
+  #toc, .mobile-signoff, .reading-head, .pager { display: none; }
+  .layout { display: block; }
+  #article { border: 0; padding: 0; }
 }
